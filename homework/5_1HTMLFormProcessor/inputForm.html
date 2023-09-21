@@ -46,11 +46,42 @@
   	<label for="school_name">School Name:</label> 
     <input type="text" name="school_name" id="school_name" />
   </p>
-  
+
+  <p>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+  </p>
+  <p>
+    <label for="academicStanding">Select current Status:</label>
+    <input type="radio" name="academicStanding" value="highSchool">High School
+    <input type="radio" name="academicStanding" value="freshman">Freshman
+    <input type="radio" name="academicStanding" value="sophomore">Sophomore
+  </p>
+  <p>
+    <label for="major"></label>
+		<select id="major" name="major">
+			<option>Please select a Major</option>
+			<option value="cis">Computer Information Systems</option>
+			<option value="gd">Graphic Design</option>
+			<option value="wdv">Web Development</option>
+		</select>
+  </p>
+  <p>
+    <label for="programInfo"></label>
+    <input type="checkbox" name="programInfo" value="programInfo">Please contact me with program information
+    <label for="programAdvisor"></label>
+    <br><input type="checkbox" name="programAdvisor" value="programAdvisor">I would like to contact an program advisor
+  </p>
+  <p>
+    <label for="commentSection">Comments</label>
+    <input type="text" id="commentSection" name="commentSection">
+  </p>
+
   <p>
     <input type="submit" name="button" id="button" value="Submit" />
     <input type="reset" name="button2" id="button2" value="Reset" />
   </p>
+ 
   
 </form>
 

@@ -5,7 +5,31 @@
 </head>
 
 <body>
-<h1>WDV101 Intro HTML and CSS</h1>
+<p>Dear <?php echo ucfirst($_POST['first_name']); ?>,</p>
+
+<p>Thank for you for your interest in DMACC. </p> 
+
+<p>We have you listed as an <?php echo ucfirst($_POST['academicStanding']); ?> starting this fall.</p> 
+
+<p>You have declared <?php echo strtoupper($_POST['major']); ?> as your major. </p>
+
+<p>Based upon your responses we will provide the following information in our confirmation email to you at <?php echo ucfirst($_POST['email']); ?>:</p>
+
+<?php 
+if ($_POST['programInfo'] == 'programInfo') {
+    echo "<p>Program Information</p>";
+}
+
+if ($_POST['programAdvisor'] == 'programAdvisor') {
+    echo "<p>Program Advisor</p>";
+}
+?>
+
+
+<p>You have shared the following comments which we will review:</p>
+
+<p><?php echo ucfirst($_POST['commentSection']); ?></p>
+<!--<h1>WDV101 Intro HTML and CSS</h1>
 <h2>UNIT 3 Forms - Lesson 2 Server Side Processes</h2>
 <p>This page will demonstrate how a server side application will take the data that was entered on a form and display it within an HTML table. This example will work for any form. It is setup to read any or all fields on a form without needing any changes.  Other applications are more specific to the form they process and require updates anytime the form is changed.</p>
 
@@ -19,7 +43,8 @@
 <p>The table below displays the 'name=value' pairs that were entered on the form and processed on the server.  This page is a result of that server side process.</p>
 <p>The <strong>Field Name</strong> column contains the value of the name attribute for each field on the form. <em>Example: &lt;input name=&quot;first_name&quot;&gt;</em>  This displays what you coded into the HTML. NOTE: If you do not have a name attribute for a field OR if the name attribute does not have a value the form will NOT send the data to the server.</p>
 <p>The <strong>Value of Field</strong> column contains the value of each field that was sent to the server by the form. This will vary depending upon the HTML form element and how the value attribute was used for a field.</p>
-<h3>Form Name-Value Pairs</h3>
+<h3>Form Name-Value Pairs</h3>-->
+<p style="padding-top: 40px;">Table here to review values inputed</p>
 <?php
 
 	echo "<table border='1'>";
@@ -33,8 +58,6 @@
 	} 
 	echo "</table>";
 	echo "<p>&nbsp;</p>";
-
 ?>
-
 </body>
 </html>

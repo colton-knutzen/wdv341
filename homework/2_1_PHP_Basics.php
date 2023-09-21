@@ -3,11 +3,12 @@ $yourName = "Colton";
 $number1 = 10;
 $number2 = 20;
 $total = $number1 + $number2;
-$indexedLangArray_1 = ["PHP", "HTML", "JavaScript"];
-$indexedLangArray_2 = array("PHP", "HTML", "JavaScript");
 
-// Convert the PHP array to a JavaScript array
-$javaScriptArray = json_encode($indexedLangArray_1);
+$PHPLangArray = array("PHP", "HTML", "JavaScript");
+
+/* Old. Used Json
+$javaScriptArray = json_encode($indexedLangArray);
+*/
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +20,20 @@ $javaScriptArray = json_encode($indexedLangArray_1);
     <title>Document</title>
 </head>
 <script>
-    // Define langArray in the global JavaScript scope
-    let langArray = <?php echo $javaScriptArray; ?>;
+    function displayArray() {
+        let JSLangArray = [<?php foreach ($PHPLangArray as $value) {
+                                echo "'$value',";
+                            } ?>]
+        let ul = document.querySelector("ul");
+
+        for (let i = 0; i < JSLangArray.length; i++) {
+            let li = document.createElement("li");
+            li.textContent = JSLangArray[i];
+            ul.appendChild(li);
+        }
+    }
+    /* Old. Used Javascript Loop rather than PHP loop.
+    let langArray = ;
 
     function displayArray() {
         let ul = document.querySelector("ul");
@@ -30,7 +43,7 @@ $javaScriptArray = json_encode($indexedLangArray_1);
             li.textContent = langArray[i];
             ul.appendChild(li);
         }
-    }
+    }*/
 </script>
 
 <body>
