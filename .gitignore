@@ -1,1 +1,2 @@
-dbConnect.php
+dbConnect_local.php
+dbConnect_live.php
