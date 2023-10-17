@@ -13,7 +13,7 @@
     //  require
 
     //1. 
-    require '../dbConnect_local.php';    //copies the content of the dbConnect.php INTO this page       
+    require '../dbConnect.php';    //copies the content of the dbConnect.php INTO this page       
 
 
     try { 

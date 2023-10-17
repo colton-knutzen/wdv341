@@ -1,5 +1,5 @@
 <?php
-require '../../dbConnect_live.php';
+require '../../dbConnect.php';
 
 try { 
     $sql = "SELECT product_name, product_description, product_price, product_image, product_inStock, product_status FROM wdv341_products ORDER BY product_name DESC"; 

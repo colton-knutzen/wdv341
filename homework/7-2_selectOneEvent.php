@@ -14,11 +14,11 @@
 //  require
 
 //1. 
-require '../dbConnect_local.php';    //copies the content of the dbConnect.php INTO this page       
+require '../dbConnect.php';    //copies the content of the dbConnect.php INTO this page       
 
 try {
     //2. create the SQL command
-    $sql = "SELECT events_name,events_description FROM wdv341_events";
+    $sql = "SELECT events_name, events_description FROM wdv341_events";
 
     //3. prepare out statement object PDO Prepared Statements
     $stmt = $conn->prepare($sql);   // -> is used instead of . for object->property or object->method
