@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .specialDisplay   {
+            display:none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>WDV341 Intro PHP</h1>
+    <h2>Honeypot Form Protection Example</h2>
+    <form method="post" action="formHoneyPot.php">
+
+        <p>
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName">
+        </p>
+
+        <p>
+            <label for="middleName">Middle Name</label>
+            <input type="text" name="mName" id="mName" placeholder="First Name">
+        </p>
+
+        <p>
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName">
+        </p>
+
+        <p class="specialDisplay">
+            <label for="inTitle">Title</label>
+            <input type="text" name="inTitle" id="inTitle"> 
+        </p>
+        
+
+        <p>
+            <input type="submit" value="submit">
+            <input type="reset">
+        </p>
+
+    </form>
+</body>
+</html>

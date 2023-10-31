@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form	{
+            width:600px;
+            margin:auto;
+            background-color:lightblue;	
+            padding-left: 20px;
+        }
+        
+        form legend	{
+            font-size:larger;
+            text-align:center;
+        }
+
+        .favorite_class   {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <h1>WDV341: Intro to PHP</h1>
+    <h2>10-1: Protect Form Processor</h2>
+    <form id="form1" name="form1" method="post" action="formHandler.php">
+
+        <legend>Example Form</legend>
+        
+        <p>
+            <label for="first_name">First Name:</label> 
+          <input type="text" name="first_name" id="first_name" required>
+        </p>
+        
+        <p>
+            <label for="last_name">Last Name:</label> 
+          <input type="text" name="last_name" id="last_name" required>
+        </p>
+        
+        <p>
+            <label for="school_name">School Name:</label> 
+          <input type="text" name="school_name" id="school_name" required>
+        </p>
+      
+        <p>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </p>
+
+        <p>
+          <label for="academicStanding">Select current Status:</label>
+          <input type="radio" name="academicStanding" value="highSchool" required>High School
+          <input type="radio" name="academicStanding" value="freshman" required>Freshman
+          <input type="radio" name="academicStanding" value="sophomore" required>Sophomore
+        </p>
+
+        <p class="favorite_class">
+          <label for="favorite_class">Favorite Class:</label> 
+          <input type="text" name="favorite_class" id="favorite_class">
+        </p>
+
+        <p>
+          <label for="major"></label>
+              <select id="major" name="major">
+                  <option value="">Please select a Major</option>
+                  <option value="cis">Computer Information Systems</option>
+                  <option value="gd">Graphic Design</option>
+                  <option value="wdv">Web Development</option>
+              </select>
+        </p>
+
+        <p>
+          <label for="programInfo"></label>
+          <input type="checkbox" name="programInfo" value="programInfo">Please contact me with program information
+          <label for="programAdvisor"></label>
+          <br><input type="checkbox" name="programAdvisor" value="programAdvisor">I would like to contact an program advisor
+        </p>
+
+        <p>
+          <label for="commentSection">Comments</label>
+          <input type="text" id="commentSection" name="commentSection">
+        </p>
+      
+        <p>
+          <input type="submit" name="button" id="button" value="Submit">
+          <input type="reset" name="button2" id="button2" value="Reset">
+        </p>
+      </form>
+</body>
+</html>
