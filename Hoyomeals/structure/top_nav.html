@@ -1,0 +1,63 @@
+<script>
+        let userLoggedIn = document.cookie.includes('userLoggedIn=valid');
+
+        let loginTopNav = document.getElementById('loginTopNav');
+        let logoutTopNav = document.getElementById('logoutTopNav');
+
+        if (userLoggedIn) {
+                loginTopNav.style.display = 'none';
+                logoutTopNav.style.display = 'block';
+        } else {
+                loginTopNav.style.display = 'block';
+                logoutTopNav.style.display = 'none';
+        }
+
+        function logout() {
+                document.cookie = 'userLoggedIn=invalid; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                document.cookie = 'adminLoggedIn=invalid; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        };
+
+        function getCookie(cname) {
+                let name = cname + "=";
+                let decodedCookie = decodeURIComponent(document.cookie);
+                let ca = decodedCookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                        let c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                                c = c.substring(1);
+                        }
+                        if (c.indexOf(name) == 0) {
+                                return c.substring(name.length, c.length);
+                        }
+                }
+                return "";
+        };
+
+        function displayUsername() {
+                let usernameValue = getCookie("username");
+
+                if (usernameValue) {
+                        document.querySelector('#displayUsernameSpan').innerText = usernameValue;
+                } else {
+                        document.querySelector('#displayUsernameSpan').innerText = "Username not found";
+                }
+        };
+
+</script>
+
+<div class="top-nav">
+        <div class="top-nav-social">
+                <a href="#" target="_blank"><img src="/hoyomeals/img/icon/twitter.png" alt="twitter icon"></a>
+                <a href="#" target="_blank"><img src="/hoyomeals/img/icon/facebook.png" alt="facebook icon"></a>
+                <a href="#" target="_blank"><img src="/hoyomeals/img/icon/instagram.png" alt="instagram icon"></a>
+        </div>
+
+        <div class="top-nav-links">
+                <span id="loginTopNav"><a href="/hoyomeals/login.php">Login</a></span>
+                <span id="logoutTopNav">Hello <span id="displayUsernameSpan">
+                                <script>displayUsername()</script>
+                        </span>!<a onclick="logout()" href="/hoyomeals/php/logout.php" >Logout</a></span>
+                <a href="/hoyomeals/index.html">Home</a>
+        </div>
+</div>

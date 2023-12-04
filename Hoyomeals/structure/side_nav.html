@@ -1,0 +1,66 @@
+<script>
+    let adminLoggedIn = document.cookie.includes('adminLoggedIn=valid');
+
+    let addRecipeSideNav = document.querySelector('#addRecipeSideNav');
+    let adminSideNav = document.querySelector('#adminSideNav');
+
+    if (userLoggedIn) {
+        addRecipeSideNav.style.display = 'block';
+    } else {
+        addRecipeSideNav.style.display = 'none';
+    }
+
+    if(adminLoggedIn){
+        adminSideNav.style.display = 'block';
+        addRecipeSideNav.style.display = 'block';
+    } else {
+        adminSidNav.style.display = 'none';
+        addRecipeSideNav.style.display = 'none';
+    }
+</script>
+
+
+<nav class="side-nav">
+    <ul>
+        <li id="addRecipeSideNav">
+            <a class="side-nav-header" href="/hoyomeals/addRecipe.php" style="background: #569B9A; color: black;">Add a
+                Recipe</a>
+        </li>
+
+        <li id="adminSideNav">
+            <a class="side-nav-button" onclick="sidenavDropdown(this)">Admin Panel</a>
+            <ul class="sub-menu show">
+
+                <li style="text-align: center;">Ingredients</li>
+                <li><a href="/hoyomeals/admin/addIngredient.php">Add</a></li>
+                <li><a href="/hoyomeals/admin/deleteIngredients.php">Delete</a></li>
+                
+                <li class="sideNavSection">User</li>
+                <li><a href="/hoyomeals/admin/deleteUsers.php">Delete</a></li>
+
+                <li class="sideNavSection">Entered Recipes</li>   
+                <li><a href="/hoyomeals/admin/reviseSubmittedRecipes.php">Approve/Decline</a></li>
+
+                <li class="sideNavSection">Live Recipes</li>
+                <li><a href="/hoyomeals/admin/deleteLiveRecipes.php">Delete</a></li>  
+            </ul>
+        </li>
+
+        <li>
+            <a class="side-nav-button" onclick="sidenavDropdown(this)">Recipes</a>
+            <ul class="sub-menu show">
+                <li><a href="/hoyomeals/recipes/appetizer.php">Appetizer</a></li>
+                <li><a href="/hoyomeals/recipes/breakfast.php">Breakfast</a></li>
+                <li><a href="/hoyomeals/recipes/dessert.php">Dessert</a></li>
+                <li><a href="/hoyomeals/recipes/drink.php">Drink</a></li>
+                <li><a href="/hoyomeals/recipes/meat.php">Meat</a></li>
+                <li><a href="/hoyomeals/recipes/pasta.php">Pasta</a></li>
+                <li><a href="/hoyomeals/recipes/pizza.php">Pizza</a></li>
+                <li><a href="/hoyomeals/recipes/salad.php">Salad</a></li>
+                <li><a href="/hoyomeals/recipes/seafood.php">Seafood</a></li>
+                <li><a href="/hoyomeals/recipes/soup.php">Soup</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<!--Side Nav End-->

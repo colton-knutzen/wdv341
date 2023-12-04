@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/hoyomeals/css/styles.css" rel="stylesheet" type="text/css">
+    <link href="/hoyomeals/css/stylesForm.css" rel="stylesheet" type="text/css">
+    <!-- jquery is used for the .load function used to import the structure of the site from an external file. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="/hoyomeals/script/script.js"></script>
+
+    <title>Hoyomeals</title>
+</head>
+
+<body>
+    <!-- Start of site skeleton structure -->
+    <div class="grid-container">
+        <div id="inc-header"></div>
+        <script>$(function () { $("#inc-header").load("/hoyomeals/structure/header.html") });</script>
+        <div id="inc-top-nav"></div>
+        <script>$(function () { $("#inc-top-nav").load("/hoyomeals/structure/top_nav.html") });</script>
+        <div id="inc-side-nav"></div>
+        <script>$(function () { $("#inc-side-nav").load("/hoyomeals/structure/side_nav.html") });</script>
+        <div id="inc-left-ad">
+            <div class="left-ad"><img src="/hoyomeals/img/icon/left-ad1.jpg" alt="left_ad"></div>
+        </div>
+        <main onclick="hideSideNav()">
+            <div id="head-content-ad">
+                <div class="content-ad"><img src="/hoyomeals/img/icon/ad1.png" alt="header_ad"></div>
+            </div>
+            <div class="disclaimerHeader">
+                This is an academic site.
+                <br>All recipes are fictional. DO NOT ATTEMPT!
+            </div>
+            <!-- End of site skeleton structure -->
+
+            <div class="main-content-div">
+                <div class="page-title">
+                    <h1 style="text-align: center;">Welcome to Hoyomeals</h1>
+                    <div style="text-align: center;">Find your next favorite meal. Or share one with the world!</div>
+                </div>
+
+                <div class="parallelogram-title" id="colorTheme">
+                    <h2>Categories</h2>
+                </div>
+
+                <div class="recipeGallery">
+                    <figure>
+                        <div class="imgGallery">
+                            <a href="/hoyomeals/recipes/appetizer.php">
+                                <img src="/hoyomeals/img/food/appetizer.webp" alt="alt_text">
+                            </a>
+                        </div>
+                        <figcaption>Appetizer</figcaption>
+                    </figure>
+
+                    <figure>
+                        <div class="imgGallery">
+                            <a href="/hoyomeals/recipes/breakfast.php">
+                                <img src="/hoyomeals/img/food/breakfast.webp" alt="alt_text">
+                            </a>
+                        </div>
+                        <figcaption>Breakfast</figcaption>
+                    </figure>
+
+                    <figure>
+                        <div class="imgGallery">
+                            <a href="/hoyomeals/recipes/dessert.php">
+                                <img src="/hoyomeals/img/food/dessert.webp" alt="alt_text">
+                            </a>
+                        </div>
+                        <figcaption>Dessert</figcaption>
+                    </figure>
+
+                    <figure>
+                        <div class="imgGallery">
+                            <a href="/hoyomeals/recipes/drink.php">
+                                <img src="/hoyomeals/img/food/drink.webp" alt="alt_text">
+                            </a>
+                        </div>
+                        <figcaption>Drink</figcaption>
+                    </figure>
+
+                    <figure>
+                        <div class="imgGallery">
+                            <a href="/hoyomeals/recipes/meat.php">
+                                <img src="/hoyomeals/img/food/meat.webp" alt="alt_text">
+                            </a>
+                        </div>
+                        <figcaption>Meat</figcaption>
+                    </figure>
+
+                    <figure>
+                        <div class="imgGallery">
+                            <a href="/hoyomeals/recipes/pasta.php">
+                                <img src="/hoyomeals/img/food/pasta.webp" alt="alt_text">
+                            </a>
+                        </div>
+                        <figcaption>Pasta</figcaption>
+                    </figure>
+
+                    <figure>
+                        <div class="imgGallery">
+                            <a href="/hoyomeals/recipes/pizza.php">
+                                <img src="/hoyomeals/img/food/pizza.webp" alt="alt_text">
+                            </a>
+                        </div>
+                        <figcaption>Pizza</figcaption>
+                    </figure>
+
+                    <figure>
+                        <div class="imgGallery">
+                            <a href="/hoyomeals/recipes/salad.php">
+                                <img src="/hoyomeals/img/food/salad.webp" alt="alt_text">
+                            </a>
+                        </div>
+                        <figcaption>Salad</figcaption>
+                    </figure>
+
+                    <figure>
+                        <div class="imgGallery">
+                            <a href="/hoyomeals/recipes/seafood.php">
+                                <img src="/hoyomeals/img/food/seafood.webp" alt="alt_text">
+                            </a>
+                        </div>
+                        <figcaption>Seafood</figcaption>
+                    </figure>
+                    
+                    <figure>
+                        <div class="imgGallery">
+                            <a href="/hoyomeals/recipes/soup.php">
+                                <img src="/hoyomeals/img/food/soup.webp" alt="alt_text">
+                            </a>
+                        </div>
+                        <figcaption>Soup</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- Start of site skeleton structure -->
+            <div id="tail-content-ad">
+                <div class="content-ad"><img src="/hoyomeals/img/icon/ad2.jpg" alt="tail_ad"></div>
+            </div>
+        </main>
+        <div id="inc-right-ad">
+            <div class="right-ad"><img src="/hoyomeals/img/icon/right-ad1.jpg" alt="right_ad"></div>
+        </div>
+        <div id="inc-footer"></div>
+        <script>$(function () { $("#inc-footer").load("/hoyomeals/structure/footer.html") });</script>
+    </div>
+    <!-- End of site skeleton structure -->
+</body>
+
+</html>

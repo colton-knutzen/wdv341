@@ -1,0 +1,998 @@
+h3 {
+  border-bottom: 1px solid #EF7A35;
+}
+
+.recipe_div {
+  display: none;
+}
+
+.recipeSelection_div {
+  display: block;
+}
+
+.recipeGallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.recipeGallery figure {
+  background-color: #569B9A;
+  border: 1px solid black;
+  margin: 30px;
+  width: calc(33.33% - 60px);
+  box-sizing: border-box;
+  overflow: hidden;
+  filter: drop-shadow(0 0 3px rgba(34, 34, 34, 0.7));
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.recipeGallery figure:hover {
+  transform: scale(1.05);
+}
+.recipeGallery .imgGallery {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.recipeGallery figcaption {
+  background-color: white;
+  font-style: italic;
+  font-size: 0.8em;
+  text-align: center;
+  border-top: 1px black solid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.recipeGallery figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#ingredientsH2 {
+  cursor: pointer;
+}
+
+.disclaimerHeader {
+  text-align: center;
+  font-size: 30px;
+  color: red;
+  padding-bottom: 25px;
+}
+
+#instructionsH2 {
+  cursor: pointer;
+}
+
+.recipe_div {
+  padding-bottom: 150px;
+}
+
+#head-content-ad {
+  padding-top: 15px;
+}
+
+#adminSideNav {
+  display: none;
+}
+
+.confirmMessage {
+  text-align: center;
+}
+
+#addRecipeSideNav {
+  display: none;
+}
+
+.dbTableDisplay {
+  background-color: white;
+  padding: 5px;
+  filter: drop-shadow(0 0 3px rgba(34, 34, 34, 0.7));
+}
+
+.delete_button {
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+.delete_button button {
+  color: red;
+  cursor: pointer;
+  background-color: #F0F0F0;
+  filter: drop-shadow(0 0 1.75px rgba(34, 34, 34, 0.7));
+  border: 0px;
+}
+.delete_button:hover {
+  transform: scale(1.05);
+}
+
+.commit_button {
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+.commit_button button {
+  color: green;
+  cursor: pointer;
+  background-color: #F0F0F0;
+  filter: drop-shadow(0 0 1.75px rgba(34, 34, 34, 0.7));
+  border: 0px;
+}
+.commit_button:hover {
+  transform: scale(1.05);
+}
+
+.submit-button {
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+.submit-button input {
+  color: green;
+  cursor: pointer;
+  background-color: #F0F0F0;
+  filter: drop-shadow(0 0 1.75px rgba(34, 34, 34, 0.7));
+  border: 0px;
+}
+.submit-button:hover {
+  transform: scale(1.05);
+}
+
+.reset-button {
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+.reset-button input {
+  color: red;
+  cursor: pointer;
+  background-color: #F0F0F0;
+  filter: drop-shadow(0 0 1.75px rgba(34, 34, 34, 0.7));
+  border: 0px;
+}
+.reset-button:hover {
+  transform: scale(1.05);
+}
+
+.recipeNumber, .loginKeyword, .ingredientNumber {
+  display: none;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.passwordEye {
+  width: 30px;
+  position: absolute;
+  cursor: pointer;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.submit_recipe_form_styles {
+  background-color: white;
+  padding: 50px;
+  margin-bottom: 60px;
+  filter: drop-shadow(0 0 3px rgba(34, 34, 34, 0.7));
+}
+.submit_recipe_form_styles label {
+  display: block;
+}
+.submit_recipe_form_styles input {
+  height: 45px;
+  border: 1px solid lightgray;
+  padding: 5px;
+  font-size: 0.8em;
+  width: 100%;
+}
+.submit_recipe_form_styles select {
+  height: 45px;
+  border: 1px solid lightgray;
+  padding: 5px;
+  font-size: 0.8em;
+  width: 100%;
+}
+.submit_recipe_form_styles button {
+  height: 45px;
+  border: 1px solid lightgray;
+  background: white;
+  padding: 5px;
+  font-size: 1em;
+  width: 100%;
+}
+.submit_recipe_form_styles .form_row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+.submit_recipe_form_styles .form_row-difficulty {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 30px;
+}
+.submit_recipe_form_styles .difficultyRating-label {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-right: 25px;
+}
+.submit_recipe_form_styles .form_group {
+  padding-bottom: 50px;
+}
+.submit_recipe_form_styles .two_columns {
+  width: 45%;
+}
+.submit_recipe_form_styles .one_column {
+  width: 100%;
+}
+.submit_recipe_form_styles .form_row input[type=file] {
+  padding: 8px;
+  border-radius: 5px;
+}
+.submit_recipe_form_styles textarea {
+  resize: none;
+  height: 150px;
+  border: 1px solid lightgray;
+  padding: 5px;
+  font-size: 0.8em;
+  width: 100%;
+  font-family: Arial;
+}
+.submit_recipe_form_styles .difficultyRating {
+  display: flex;
+  justify-content: space-between;
+}
+.submit_recipe_form_styles .star {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 5px;
+}
+.submit_recipe_form_styles .star.selected,
+.submit_recipe_form_styles .star:hover {
+  color: gold;
+}
+.submit_recipe_form_styles button:hover {
+  cursor: pointer;
+}
+.submit_recipe_form_styles .ingrediantSelectColumn {
+  width: 65%;
+}
+.submit_recipe_form_styles .ingrediantQuantityColumn {
+  width: 15%;
+}
+.submit_recipe_form_styles .ingrediantIconColumn {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit_recipe_form_styles .ingrediantIconColumn img {
+  max-height: 45px;
+}
+.submit_recipe_form_styles input[type=submit] {
+  cursor: pointer;
+}
+
+.revise_user_submitted_recipes {
+  display: grid;
+  margin-bottom: 60px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "ID Name Name Name recipe_img" "id_data name_data name_data name_data recipe_img" "Date-Entered Category Category Category Serving-Size" "date_entered_data category_data category_data category_data serving_size_data" "Date-Modified Description Description Description Prep-Time" "date_modified_data description_data description_data description_data prep_time_data" "Author-Name description_data description_data description_data Cook-Time" "author_name_data Allergies Allergies Allergies cook_time_data" "Author-Email allergies_data allergies_data allergies_data Calories" "author_email_data Difficulty difficulty_data difficulty_data calories_data" "Ingredients Ingredients Steps Steps Steps" "ingredients_data ingredients_data step_data step_data step_data" "delete_button delete_button commit_button commit_button commit_button";
+}
+.revise_user_submitted_recipes > * {
+  padding: 2px;
+}
+.revise_user_submitted_recipes img {
+  max-height: 50px;
+}
+.revise_user_submitted_recipes .ID {
+  grid-area: ID;
+}
+.revise_user_submitted_recipes .id_data {
+  grid-area: id_data;
+}
+.revise_user_submitted_recipes .Date-Entered {
+  grid-area: Date-Entered;
+}
+.revise_user_submitted_recipes .date_entered_data {
+  grid-area: date_entered_data;
+}
+.revise_user_submitted_recipes .Date-Modified {
+  grid-area: Date-Modified;
+}
+.revise_user_submitted_recipes .date_modified_data {
+  grid-area: date_modified_data;
+}
+.revise_user_submitted_recipes .Author-Name {
+  grid-area: Author-Name;
+}
+.revise_user_submitted_recipes .author_name_data {
+  grid-area: author_name_data;
+}
+.revise_user_submitted_recipes .Author-Email {
+  grid-area: Author-Email;
+}
+.revise_user_submitted_recipes .author_email_data {
+  grid-area: author_email_data;
+}
+.revise_user_submitted_recipes .Allergies {
+  grid-area: Allergies;
+}
+.revise_user_submitted_recipes .allergies_data {
+  grid-area: allergies_data;
+}
+.revise_user_submitted_recipes .Category {
+  grid-area: Category;
+}
+.revise_user_submitted_recipes .category_data {
+  grid-area: category_data;
+}
+.revise_user_submitted_recipes .Name {
+  grid-area: Name;
+}
+.revise_user_submitted_recipes .name_data {
+  grid-area: name_data;
+}
+.revise_user_submitted_recipes .Description {
+  grid-area: Description;
+}
+.revise_user_submitted_recipes .description_data {
+  grid-area: description_data;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.revise_user_submitted_recipes .Ingredients {
+  grid-area: Ingredients;
+}
+.revise_user_submitted_recipes .ingredients_data {
+  grid-area: ingredients_data;
+}
+.revise_user_submitted_recipes .ingredients_data img {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.revise_user_submitted_recipes .Steps {
+  grid-area: Steps;
+}
+.revise_user_submitted_recipes .step_data {
+  grid-area: step_data;
+}
+.revise_user_submitted_recipes .recipe_img {
+  grid-area: recipe_img;
+}
+.revise_user_submitted_recipes .Difficulty {
+  grid-area: Difficulty;
+}
+.revise_user_submitted_recipes .difficulty_data {
+  grid-area: difficulty_data;
+}
+.revise_user_submitted_recipes .Serving-Size {
+  grid-area: Serving-Size;
+}
+.revise_user_submitted_recipes .serving_size_data {
+  grid-area: serving_size_data;
+}
+.revise_user_submitted_recipes .Prep-Time {
+  grid-area: Prep-Time;
+}
+.revise_user_submitted_recipes .prep_time_data {
+  grid-area: prep_time_data;
+}
+.revise_user_submitted_recipes .Cook-Time {
+  grid-area: Cook-Time;
+}
+.revise_user_submitted_recipes .cook_time_data {
+  grid-area: cook_time_data;
+}
+.revise_user_submitted_recipes .Calories {
+  grid-area: Calories;
+}
+.revise_user_submitted_recipes .calories_data {
+  grid-area: calories_data;
+}
+.revise_user_submitted_recipes .commit_button {
+  grid-area: commit_button;
+  padding-top: 10px;
+}
+.revise_user_submitted_recipes .delete_button {
+  grid-area: delete_button;
+  padding-top: 10px;
+}
+.revise_user_submitted_recipes .commit_button button {
+  height: 45px;
+  padding: 5px;
+  font-size: 1em;
+  width: 100%;
+}
+.revise_user_submitted_recipes .delete_button button {
+  height: 45px;
+  padding: 5px;
+  font-size: 1em;
+  width: 100%;
+}
+.revise_user_submitted_recipes .grid_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.revise_user_submitted_recipes .grid_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.revise_user_submitted_recipes .gridBorder_top_left_right {
+  border-top: 1px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.revise_user_submitted_recipes .gridBorder_left_right {
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.revise_user_submitted_recipes .gridBorder_bottom_left_right {
+  border-bottom: 1px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.revise_user_submitted_recipes .gridBorder_top_right {
+  border-top: 1px black solid;
+  border-right: 1px black solid;
+}
+.revise_user_submitted_recipes .gridBorder_right {
+  border-right: 1px black solid;
+}
+.revise_user_submitted_recipes .gridBorder_bottom_right {
+  border-bottom: 1px black solid;
+  border-right: 1px black solid;
+}
+.revise_user_submitted_recipes .gridBorder_top_right_bottom {
+  border-top: 1px black solid;
+  border-right: 1px black solid;
+  border-bottom: 1px black solid;
+}
+.revise_user_submitted_recipes .gridBorder_right_left {
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.revise_user_submitted_recipes td {
+  padding: 2px;
+  text-align: center;
+}
+.revise_user_submitted_recipes table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.revise_user_submitted_recipes td:last-child {
+  max-width: 250px;
+}
+.revise_user_submitted_recipes .tr_bottom_border {
+  border-bottom: 1px black solid;
+}
+
+.ingredient_delete_grid {
+  margin-bottom: 75px;
+  display: grid;
+  grid-template-columns: 10% 15% 15% 60%;
+  grid-template-rows: auto;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "ID Name Image Description" "id_data name_data image_data description_data" "delete_button delete_button delete_button .";
+}
+.ingredient_delete_grid > * {
+  padding: 2px;
+}
+.ingredient_delete_grid img {
+  max-height: 50px;
+}
+.ingredient_delete_grid .ID {
+  grid-area: ID;
+}
+.ingredient_delete_grid .Name {
+  grid-area: Name;
+}
+.ingredient_delete_grid .Image {
+  grid-area: Image;
+}
+.ingredient_delete_grid .Description {
+  grid-area: Description;
+}
+.ingredient_delete_grid .id_data {
+  grid-area: id_data;
+}
+.ingredient_delete_grid .name_data {
+  grid-area: name_data;
+}
+.ingredient_delete_grid .image_data {
+  grid-area: image_data;
+}
+.ingredient_delete_grid .image_data img {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.ingredient_delete_grid .description_data {
+  grid-area: description_data;
+  padding: 8px;
+}
+.ingredient_delete_grid .delete_button {
+  grid-area: delete_button;
+  padding-top: 10px;
+}
+.ingredient_delete_grid .delete_button button {
+  height: 45px;
+  padding: 5px;
+  font-size: 1em;
+  width: 100%;
+}
+.ingredient_delete_grid .grid_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.ingredient_delete_grid .grid_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ingredient_delete_grid .gridBorder_top_left_right {
+  border-top: 1px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.ingredient_delete_grid .gridBorder_left_right {
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.ingredient_delete_grid .gridBorder_bottom_left_right {
+  border-bottom: 1px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.ingredient_delete_grid .gridBorder_top_right {
+  border-top: 1px black solid;
+  border-right: 1px black solid;
+}
+.ingredient_delete_grid .gridBorder_right {
+  border-right: 1px black solid;
+}
+.ingredient_delete_grid .gridBorder_bottom_right {
+  border-bottom: 1px black solid;
+  border-right: 1px black solid;
+}
+.ingredient_delete_grid .gridBorder_top_right_bottom {
+  border-top: 1px black solid;
+  border-right: 1px black solid;
+  border-bottom: 1px black solid;
+}
+.ingredient_delete_grid .gridBorder_right_left {
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+
+.ingredient_modify_grid {
+  margin-bottom: 75px;
+  display: grid;
+  grid-template-columns: 10% 15% 15% 60%;
+  grid-template-rows: auto;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "ID Name Image Description" "id_data name_data image_data description_data" "id_data name_input image_input description_input" ". . . modify_button";
+}
+.ingredient_modify_grid > * {
+  padding: 2px;
+}
+.ingredient_modify_grid img {
+  max-height: 50px;
+}
+.ingredient_modify_grid .ID {
+  grid-area: ID;
+}
+.ingredient_modify_grid .Name {
+  grid-area: Name;
+}
+.ingredient_modify_grid .Image {
+  grid-area: Image;
+}
+.ingredient_modify_grid .Description {
+  grid-area: Description;
+}
+.ingredient_modify_grid .id_data {
+  grid-area: id_data;
+}
+.ingredient_modify_grid .name_data {
+  grid-area: name_data;
+}
+.ingredient_modify_grid .image_data {
+  grid-area: image_data;
+}
+.ingredient_modify_grid .image_data img {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.ingredient_modify_grid .description_data {
+  grid-area: description_data;
+  padding: 8px;
+}
+.ingredient_modify_grid .name_input {
+  grid-area: name_input;
+}
+.ingredient_modify_grid .name_input input {
+  width: 100%;
+  box-sizing: border-box;
+}
+.ingredient_modify_grid .image_input {
+  grid-area: image_input;
+}
+.ingredient_modify_grid .image_input input {
+  color: transparent;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+.ingredient_modify_grid .description_input {
+  grid-area: description_input;
+}
+.ingredient_modify_grid .description_input input {
+  box-sizing: border-box;
+}
+.ingredient_modify_grid .modify_button {
+  grid-area: modify_button;
+  padding-top: 10px;
+}
+.ingredient_modify_grid .modify_button button {
+  height: 45px;
+  border: 1px solid lightgray;
+  background: white;
+  padding: 5px;
+  font-size: 1em;
+  width: 100%;
+}
+.ingredient_modify_grid .grid_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.ingredient_modify_grid .grid_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ingredient_modify_grid .gridBorder_top_left_right {
+  border-top: 1px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.ingredient_modify_grid .gridBorder_left_right {
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.ingredient_modify_grid .gridBorder_bottom_left_right {
+  border-bottom: 1px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.ingredient_modify_grid .gridBorder_top_right {
+  border-top: 1px black solid;
+  border-right: 1px black solid;
+}
+.ingredient_modify_grid .gridBorder_right {
+  border-right: 1px black solid;
+}
+.ingredient_modify_grid .gridBorder_bottom_right {
+  border-bottom: 1px black solid;
+  border-right: 1px black solid;
+}
+.ingredient_modify_grid .gridBorder_top_right_bottom {
+  border-top: 1px black solid;
+  border-right: 1px black solid;
+  border-bottom: 1px black solid;
+}
+.ingredient_modify_grid .gridBorder_right_left {
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+
+.revise_live_recipes {
+  display: grid;
+  margin-bottom: 60px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "ID Name Name Name recipe_img" "id_data name_data name_data name_data recipe_img" "Date-Entered Category Category Category Serving-Size" "date_entered_data category_data category_data category_data serving_size_data" "Date-Modified Description Description Description Prep-Time" "date_modified_data description_data description_data description_data prep_time_data" "Author-Name description_data description_data description_data Cook-Time" "author_name_data Allergies Allergies Allergies cook_time_data" "Author-Email allergies_data allergies_data allergies_data Calories" "author_email_data Difficulty difficulty_data difficulty_data calories_data" "Ingredients Ingredients Steps Steps Steps" "ingredients_data ingredients_data step_data step_data step_data" "delete_button delete_button . . .";
+}
+.revise_live_recipes > * {
+  padding: 2px;
+}
+.revise_live_recipes img {
+  max-height: 50px;
+}
+.revise_live_recipes .ID {
+  grid-area: ID;
+}
+.revise_live_recipes .id_data {
+  grid-area: id_data;
+}
+.revise_live_recipes .Date-Entered {
+  grid-area: Date-Entered;
+}
+.revise_live_recipes .date_entered_data {
+  grid-area: date_entered_data;
+}
+.revise_live_recipes .Date-Modified {
+  grid-area: Date-Modified;
+}
+.revise_live_recipes .date_modified_data {
+  grid-area: date_modified_data;
+}
+.revise_live_recipes .Author-Name {
+  grid-area: Author-Name;
+}
+.revise_live_recipes .author_name_data {
+  grid-area: author_name_data;
+}
+.revise_live_recipes .Author-Email {
+  grid-area: Author-Email;
+}
+.revise_live_recipes .author_email_data {
+  grid-area: author_email_data;
+}
+.revise_live_recipes .Allergies {
+  grid-area: Allergies;
+}
+.revise_live_recipes .allergies_data {
+  grid-area: allergies_data;
+}
+.revise_live_recipes .Category {
+  grid-area: Category;
+}
+.revise_live_recipes .category_data {
+  grid-area: category_data;
+}
+.revise_live_recipes .Name {
+  grid-area: Name;
+}
+.revise_live_recipes .name_data {
+  grid-area: name_data;
+}
+.revise_live_recipes .Description {
+  grid-area: Description;
+}
+.revise_live_recipes .description_data {
+  grid-area: description_data;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.revise_live_recipes .Ingredients {
+  grid-area: Ingredients;
+}
+.revise_live_recipes .ingredients_data {
+  grid-area: ingredients_data;
+}
+.revise_live_recipes .ingredients_data img {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.revise_live_recipes .Steps {
+  grid-area: Steps;
+}
+.revise_live_recipes .step_data {
+  grid-area: step_data;
+}
+.revise_live_recipes .recipe_img {
+  grid-area: recipe_img;
+}
+.revise_live_recipes .Difficulty {
+  grid-area: Difficulty;
+}
+.revise_live_recipes .difficulty_data {
+  grid-area: difficulty_data;
+}
+.revise_live_recipes .Serving-Size {
+  grid-area: Serving-Size;
+}
+.revise_live_recipes .serving_size_data {
+  grid-area: serving_size_data;
+}
+.revise_live_recipes .Prep-Time {
+  grid-area: Prep-Time;
+}
+.revise_live_recipes .prep_time_data {
+  grid-area: prep_time_data;
+}
+.revise_live_recipes .Cook-Time {
+  grid-area: Cook-Time;
+}
+.revise_live_recipes .cook_time_data {
+  grid-area: cook_time_data;
+}
+.revise_live_recipes .Calories {
+  grid-area: Calories;
+}
+.revise_live_recipes .calories_data {
+  grid-area: calories_data;
+}
+.revise_live_recipes .delete_button {
+  grid-area: delete_button;
+  padding-top: 10px;
+}
+.revise_live_recipes .delete_button button {
+  height: 45px;
+  padding: 5px;
+  font-size: 1em;
+  width: 100%;
+}
+.revise_live_recipes .grid_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.revise_live_recipes .grid_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.revise_live_recipes .gridBorder_top_left_right {
+  border-top: 1px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.revise_live_recipes .gridBorder_left_right {
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.revise_live_recipes .gridBorder_bottom_left_right {
+  border-bottom: 1px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.revise_live_recipes .gridBorder_top_right {
+  border-top: 1px black solid;
+  border-right: 1px black solid;
+}
+.revise_live_recipes .gridBorder_right {
+  border-right: 1px black solid;
+}
+.revise_live_recipes .gridBorder_bottom_right {
+  border-bottom: 1px black solid;
+  border-right: 1px black solid;
+}
+.revise_live_recipes .gridBorder_top_right_bottom {
+  border-top: 1px black solid;
+  border-right: 1px black solid;
+  border-bottom: 1px black solid;
+}
+.revise_live_recipes .gridBorder_right_left {
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.revise_live_recipes td {
+  padding: 2px;
+  text-align: center;
+}
+.revise_live_recipes table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.revise_live_recipes td:last-child {
+  max-width: 250px;
+}
+.revise_live_recipes .tr_bottom_border {
+  border-bottom: 1px black solid;
+}
+
+.user_revise_grid {
+  margin-bottom: 75px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "ID Role Name Password" "id_data role_data name_data password_data" "delete_button delete_button . .";
+}
+.user_revise_grid > * {
+  padding: 2px;
+}
+.user_revise_grid img {
+  max-height: 50px;
+}
+.user_revise_grid .ID {
+  grid-area: ID;
+}
+.user_revise_grid .Role {
+  grid-area: Role;
+}
+.user_revise_grid .Name {
+  grid-area: Name;
+}
+.user_revise_grid .Password {
+  grid-area: Password;
+}
+.user_revise_grid .id_data {
+  grid-area: id_data;
+}
+.user_revise_grid .role_data {
+  grid-area: role_data;
+}
+.user_revise_grid .name_data {
+  grid-area: name_data;
+}
+.user_revise_grid .password_data {
+  grid-area: password_data;
+}
+.user_revise_grid .delete_button {
+  grid-area: delete_button;
+  padding-top: 10px;
+}
+.user_revise_grid .delete_button button {
+  height: 45px;
+  padding: 5px;
+  font-size: 1em;
+  width: 100%;
+}
+.user_revise_grid .grid_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.user_revise_grid .grid_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user_revise_grid .gridBorder_top_left_right {
+  border-top: 1px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.user_revise_grid .gridBorder_left_right {
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.user_revise_grid .gridBorder_bottom_left_right {
+  border-bottom: 1px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+.user_revise_grid .gridBorder_top_right {
+  border-top: 1px black solid;
+  border-right: 1px black solid;
+}
+.user_revise_grid .gridBorder_right {
+  border-right: 1px black solid;
+}
+.user_revise_grid .gridBorder_bottom_right {
+  border-bottom: 1px black solid;
+  border-right: 1px black solid;
+}
+.user_revise_grid .gridBorder_top_right_bottom {
+  border-top: 1px black solid;
+  border-right: 1px black solid;
+  border-bottom: 1px black solid;
+}
+.user_revise_grid .gridBorder_right_left {
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+}
+
+.sideNavSection {
+  text-align: center;
+  padding-top: 30px;
+}/*# sourceMappingURL=stylesForm.css.map */

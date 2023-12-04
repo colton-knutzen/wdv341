@@ -1,0 +1,32 @@
+<script>
+    function displayCurrentYear() {
+        let currentYear = new Date().getFullYear();
+
+        document.getElementById('copyright').innerHTML = '&copy; ' + currentYear + ' of Hoyomeals.com. All rights reserved.';
+    }
+</script>
+
+<footer>
+    <div class="footer-logo">
+        <a href="/hoyomeals/../hoyomeals/index.html"><img src="/hoyomeals/img/logo/hb_logo_short.png"
+                alt="Chayot Chronicles Short Logo - Return Home Link"></a>
+    </div>
+
+    <div class="footer-links">
+        <ul>
+            <li><a href="/hoyomeals/#">Privacy Policy</a></li>
+            <li><a>Support the Site:</a>
+            <a href="/hoyomeals/#" target="_blank"><img class="footer-social"
+                        src="/hoyomeals/img/icon/kofi.png" alt="kofi logo and link"></a>
+        </ul>
+    </div>
+    <div class="footer-return">
+        <a href="/hoyomeals/#top">Top</a>
+    </div>
+</footer>
+<div class="footer-copyright">
+    <p>Genshin Impact&trade; and Honkai: Star Rail&trade; are registered tardemarks of MiHoYo Co. Ltd.</p>
+    <p>This site is not affiliated with or endorsed by miHoYo. Images and data &copy; MiHoYo Co. Ltd.</p>
+    <p id="copyright"></p>
+    <script>displayCurrentYear()</script>
+</div>
