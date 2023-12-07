@@ -3,41 +3,51 @@ $confirmMessage = false;
 
 if (isset($_POST['submit'])) {
 
-    //process form data into PHP variables only when submit button has been pressed
-    $inEventName = $_POST['events_name'];
-    $inEventDesc = $_POST['events_description'];
-    $inEventPresenter = $_POST['events_presenter'];
-    $inEventDate = $_POST['events_date'];
-    $inEventTime = $_POST['events_time'];
+    $event_location = $_POST['event_location']; //Honeypot 
+    if (empty($event_location)) {
 
-    //connect to database
-    require '../dbConnect.php';
+        //process form data into PHP variables only when submit button has been pressed
+        $inEventName = $_POST['events_name'];
+        $inEventDesc = $_POST['events_description'];
+        $inEventPresenter = $_POST['events_presenter'];
+        $inEventDate = $_POST['events_date'];
+        $inEventTime = $_POST['events_time'];
 
-    //mySQL command
-    $sql = "INSERT INTO wdv341_events";
-    $sql .= "(events_name, events_description, events_presenter, events_date, events_time, events_date_entered, events_date_updated)";
-    $sql .= " VALUES ";
-    $sql .= "(:eventName, :eventDesc, :eventPresenter, :eventDate, :eventTime, :eventDateEntered,  :eventDateUpdated)";
+        //connect to database
+        require '../dbConnect.php';
 
-    //prepared statement
-    $stmt = $conn->prepare($sql);
+        //mySQL command
+        $sql = "INSERT INTO wdv341_events";
+        $sql .= "(events_name, events_description, events_presenter, events_date, events_time, events_date_entered, events_date_updated)";
+        $sql .= " VALUES ";
+        $sql .= "(:eventName, :eventDesc, :eventPresenter, :eventDate, :eventTime, :eventDateEntered,  :eventDateUpdated)";
 
-    //current date object
-    $today = date("Y-m-d");
+        //prepared statement
+        $stmt = $conn->prepare($sql);
 
-    //bind what was inputed with columns in table
-    $stmt->bindParam(':eventName', $inEventName);
-    $stmt->bindParam(':eventDesc', $inEventDesc);
-    $stmt->bindParam(':eventPresenter', $inEventPresenter);
-    $stmt->bindParam(':eventDate', $inEventDate);
-    $stmt->bindParam(':eventTime', $inEventTime);
-    $stmt->bindParam(':eventDateEntered', $today);
-    $stmt->bindParam(':eventDateUpdated', $today);
+        //current date object
+        $today = date("Y-m-d");
 
-    $stmt->execute();
+        //bind what was inputed with columns in table
+        $stmt->bindParam(':eventName', $inEventName);
+        $stmt->bindParam(':eventDesc', $inEventDesc);
+        $stmt->bindParam(':eventPresenter', $inEventPresenter);
+        $stmt->bindParam(':eventDate', $inEventDate);
+        $stmt->bindParam(':eventTime', $inEventTime);
+        $stmt->bindParam(':eventDateEntered', $today);
+        $stmt->bindParam(':eventDateUpdated', $today);
 
-    $confirmMessage = true;
+        $stmt->execute();
+
+        $confirmMessage = true;
+    } else {
+        echo    "<div class='confirmMessage'>
+                    <h2>We're sorry, there was an error. Please try submitting again.</h2>
+                </div>";
+        exit;
+    }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,6 +62,10 @@ if (isset($_POST['submit'])) {
             background-color: skyblue;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .event_location {
+            display: none;
         }
     </style>
 </head>
@@ -85,6 +99,11 @@ if (isset($_POST['submit'])) {
                 <input type="text" name="events_presenter" id="events_presenter">
             </p>
 
+            <p class="event_location">
+                <label for="event_location">Event Location:</label>
+                <input type="text" name="event_location" id="event_location">
+            </p>
+
             <p>
                 <label for="events_date">Event Date: </label>
                 <input type="date" name="events_date" id="events_date">
@@ -99,7 +118,6 @@ if (isset($_POST['submit'])) {
                 <input type="submit" name="submit" value="Submit">
                 <input type="reset">
             </p>
-
         <?php
     }
         ?>
